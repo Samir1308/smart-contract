@@ -1,0 +1,33 @@
+Smart Contract Project
+
+This project demonstrates the use of `require()`, `assert()`, and `revert()` statements in a Solidity smart contract.
+
+Contract Overview
+
+The `AssertionExample` contract includes:
+- `setValue`: A function to set a value, restricted to the contract owner using `require()`.
+- `assertExample`: A function demonstrating the use of `assert()` to ensure two inputs are not equal.
+- `revertExample`: A function demonstrating the use of `revert()` to handle conditional errors.
+
+Functions
+
+`setValue(uint256 _newValue)`
+- Sets a new value if the caller is the contract owner.
+- Uses `require()` to restrict access.
+
+`assertExample(uint256 x, uint256 y)`
+- Uses `assert()` to ensure `x` is not equal to `y`.
+- Returns the sum of `x` and `y` if the assertion passes.
+
+`revertExample(uint256 x, uint256 y)`
+- Uses `revert()` to ensure `x` is not equal to `y`.
+- Returns the sum of `x` and `y` if `x` and `y` are not equal.
+
+How to Use
+
+1. Deploy the contract to a local Ethereum testnet or the Remix IDE.
+2. Interact with the contract functions to observe the behavior of `require()`, `assert()`, and `revert()`.
+
+
+
+This project is licensed under the MIT License.
