@@ -1,0 +1,31 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract AssertionExample{
+    address public owner;
+    uint256 public value;
+
+    constructor(){
+        owner=msg.sender;
+    }
+
+    function setValue(uint256 _newValue) 
+    public {
+        require(msg.sender==owner,"Only the contract owner can set the value");
+        value=_newValue;
+    }
+
+    function assertExample(uint256 x,uint256 y) 
+    public pure returns(uint256){
+        assert(x!=y);
+        return x+y;
+    }
+
+    function revertExample(uint256 x,uint256 y) 
+    public pure returns(uint256){
+        if (x==y){
+            revert("Inputs must be different");
+        }
+        return x+y;
+    }
+}
